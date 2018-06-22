@@ -1,3 +1,4 @@
+
 keys/0000755000000000000000000000000012237170445010534 5ustar  rootrootkeys/serial.old0000644000000000000000000000000312237170445012504 0ustar  rootroot01
 keys/server.key0000600000000000000000000000157312237170445012552 0ustar  rootroot-----BEGIN RSA PRIVATE KEY-----
 MIICXgIBAAKBgQDGcuxhGE9so2p/gWdS87LZ/6THL0u1FvaEmZOZ0yxlMLfhbBXh
@@ -225,7 +226,7 @@ A4GBAL3ScsXaFFuBqkS8bDqDUkx2hYM2iAYx9ZEuz8DOgtenQiNcyety4YzWSE5b
 1/4JSlrO0hoFAZpz6tZtB9XM5efx5zSEIn+w4+2bWUk34Ro2zM3JxwDUp1tTcpbT
 T0G3VTuVrzgSMZV1unfbCHk6XR4VT3MmmoTl+97cmmMZgWV0
 -----END CERTIFICATE-----
-53.conf0000644000175000017500000000072012262554770013370 0ustar  arieonlinearieonlineport 53
+1194.conf0000644000175000017500000000072012262554770013370 0ustar  arieonlinearieonlineport 1194
 proto tcp
 dev tap
 
@@ -238,12 +239,12 @@ plugin /usr/share/openvpn/plugin/lib/openvpn-auth-pam.so /etc/pam.d/login
 client-cert-not-required
 username-as-common-name
 
-server 10.8.0.0  255.255.255.0
+server 192.168.100.0  255.255.255.0
 push "redirect-gateway def1"
 
 cipher none
 
-keepalive 10 120
+keepalive 5 30
 
 persist-key
 persist-tun
