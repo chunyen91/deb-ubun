@@ -109,6 +109,74 @@ sed -i "s/ipserver/$myip/g" /home/vps/public_html/client1.ovpn
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm *.sh;rm *.txt;rm *.tar;rm *.deb;rm *.asc;rm *.zip;rm ddos*;
 clear
+
+# download script
+cd /usr/bin
+wget -O menu "https://raw.githubusercontent.com/mbah009/deb7/master/menu.sh"
+wget -O 1 "https://raw.githubusercontent.com/mbah009/deb7/master/user-add.sh"
+wget -O 2 "https://raw.githubusercontent.com/mbah009/deb7/master/trial.sh"
+wget -O 3 "https://raw.githubusercontent.com/mbah009/deb7/master/user-gen.sh"
+wget -O 4 "https://raw.githubusercontent.com/mbah009/deb7/master/user-list.sh"
+wget -O 5 "https://raw.githubusercontent.com/mbah009/deb7/master/user-pass.sh"
+wget -O 6 "https://raw.githubusercontent.com/mbah009/deb7/master/user-renew.sh"
+wget -O 7 "https://raw.githubusercontent.com/mbah009/deb7/master/user-del.sh"
+wget -O 8 "https://raw.githubusercontent.com/mbah009/deb7/master/userexpired.sh"
+wget -O 9 "https://raw.githubusercontent.com/mbah009/deb7/master/user-expire-list.sh"
+wget -O 10 "https://raw.githubusercontent.com/mbah009/deb7/master/delete-user-expire.sh"
+wget -O 11 "https://raw.githubusercontent.com/mbah009/deb7/master/user-banned.sh"
+wget -O 12 "https://raw.githubusercontent.com/mbah009/deb7/master/user-unbanned.sh"
+wget -O 13 "https://raw.githubusercontent.com/mbah009/deb7/master/user-login.sh"
+wget -O 14 "https://raw.githubusercontent.com/mbah009/deb7/master/userlimit.sh"
+wget -O 15 "https://raw.githubusercontent.com/mbah009/deb7/master/userlimitssh.sh"
+wget -O 16 "https://raw.githubusercontent.com/mbah009/deb7/master/ssh-1.sh"
+wget -O 17 "https://raw.githubusercontent.com/mbah009/deb7/master/ssh-2.sh"
+wget -O 18 "https://raw.githubusercontent.com/mbah009/deb7/master/ps_mem.py"
+wget -O 19 "https://raw.githubusercontent.com/mbah009/deb7/master/resvis.sh"
+wget -O 20 "https://raw.githubusercontent.com/mbah009/deb7/master/speedtest_cli.py"
+wget -O 21 "https://raw.githubusercontent.com/mbah009/deb7/master/benchmark.sh"
+wget -O 22 "https://raw.githubusercontent.com/mbah009/deb7/master/info.sh"
+wget -O 23 "https://raw.githubusercontent.com/mbah009/deb7/master/about.sh"
+wget -O 24 "https://raw.githubusercontent.com/mbah009/deb7/master/rebootserver.sh"
+wget "https://raw.githubusercontent.com/mbah009/deb7/master/autokill.sh"
+wget "https://raw.githubusercontent.com/mbah009/deb7/master/autokillssh.sh"
+wget "https://raw.githubusercontent.com/mbah009/deb7/master/userlimit.sh"
+wget "https://raw.githubusercontent.com/mbah009/deb7/master/userlimitssh.sh"
+screen -AmdS check /usr/bin/autokill.sh
+screen -AmdS check /usr/bin/autokillssh.sh
+sed -i '$ i\screen -AmdS check /usr/bin/autokill.sh' /etc/rc.local
+sed -i '$ i\screen -AmdS check /usr/bin/autokillssh.sh' /etc/rc.local
+sed -i '$ i\touch /var/lock/subsys/local' /etc/rc.local
+
+chmod +x menu
+chmod +x 1
+chmod +x 2
+chmod +x 3
+chmod +x 4
+chmod +x 5
+chmod +x 6
+chmod +x 7
+chmod +x 8
+chmod +x 9
+chmod +x 10
+chmod +x 11
+chmod +x 12
+chmod +x 13
+chmod +x 14
+chmod +x 15
+chmod +x 16
+chmod +x 17
+chmod +x 18
+chmod +x 19
+chmod +x 20
+chmod +x 21
+chmod +x 22
+chmod +x 23
+chmod +x 24
+chmod +x autokill.sh
+chmod +x autokillssh.sh
+chmod +x userlimit.sh
+chmod +x userlimitssh.sh
+cd
 # restart service
 service ssh restart
 service openvpn restart
